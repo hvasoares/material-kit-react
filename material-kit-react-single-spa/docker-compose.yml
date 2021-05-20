@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  icons:
+    image: 'node:12.18.2'
+    working_dir: /home/node/app/packages/icons
+    volumes:
+      - .:/home/node/app
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '8081:8080'
+    command: 'npm start'
+
+  login:
+    image: 'node:12.18.2'
+    working_dir: /home/node/app/packages/login
+    volumes:
+      - .:/home/node/app
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '8082:8080'
+    command: 'npm start'
+
+  root-config:
+    image: 'node:12.18.2'
+    working_dir: /home/node/app/packages/root-config
+    volumes:
+      - .:/home/node/app
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '9000:9000'
+    command: 'npm start'
