@@ -27,6 +27,31 @@ registerApplication({
   }
 });
 
+registerApplication({
+  name: '@some-org/account-page',
+  app: () => System.import('@some-org/account-page'),
+  activeWhen: ['/app/account'],
+  customProps: {
+    domElement: document.getElementById('root')
+  }
+});
+
+registerApplication({
+  name: '@some-org/customer-list-page',
+  app: () => System.import('@some-org/customer-list-page'),
+  activeWhen: ['/app/customers'],
+  customProps: {
+    domElement: document.getElementById('root')
+  }
+});
+registerApplication({
+  name: '@some-org/product-list-page',
+  app: () => System.import('@some-org/product-list-page'),
+  activeWhen: ['/app/products'],
+  customProps: {
+    domElement: document.getElementById('root')
+  }
+});
 start({
   urlRerouteOnly: true
 });

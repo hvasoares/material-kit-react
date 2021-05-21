@@ -1,5 +1,38 @@
 version: '3.8'
 services:
+  product-list:
+    image: 'node:12.18.2'
+    working_dir: /home/node/app/packages/product-list
+    volumes:
+      - .:/home/node/app
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '8087:8080'
+    command: 'npm start'
+
+  customer-list:
+    image: 'node:12.18.2'
+    working_dir: /home/node/app/packages/customer-list
+    volumes:
+      - .:/home/node/app
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '8086:8080'
+    command: 'npm start'
+
+  account:
+    image: 'node:12.18.2'
+    working_dir: /home/node/app/packages/account
+    volumes:
+      - .:/home/node/app
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '8085:8080'
+    command: 'npm start'
+
   dashboard:
     image: 'node:12.18.2'
     working_dir: /home/node/app/packages/dashboard
