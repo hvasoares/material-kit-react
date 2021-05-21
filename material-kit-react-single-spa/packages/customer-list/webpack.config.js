@@ -10,6 +10,12 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
-    // modify the webpack config however you'd like to by adding to this object
+    externals: [
+      '@some-org/icons',
+      '@some-org/components',
+      'react',
+      'react-dom',
+      '@material-ui/core'
+    ]
   });
 };
