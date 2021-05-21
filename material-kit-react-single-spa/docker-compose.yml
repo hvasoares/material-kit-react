@@ -1,5 +1,27 @@
 version: '3.8'
 services:
+  dashboard:
+    image: 'node:12.18.2'
+    working_dir: /home/node/app/packages/dashboard
+    volumes:
+      - .:/home/node/app
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '8084:8080'
+    command: 'npm start'
+
+  components:
+    image: 'node:12.18.2'
+    working_dir: /home/node/app/packages/components
+    volumes:
+      - .:/home/node/app
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '8083:8080'
+    command: 'npm start'
+
   icons:
     image: 'node:12.18.2'
     working_dir: /home/node/app/packages/icons

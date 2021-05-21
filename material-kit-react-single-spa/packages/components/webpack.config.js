@@ -4,12 +4,12 @@ const singleSpaDefaults = require('webpack-config-single-spa');
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: 'some-org',
-    projectName: 'icons',
+    projectName: 'components',
     webpackConfigEnv,
     argv
   });
 
   return merge(defaultConfig, {
-    externals: ['react', 'react-dom', '@material-ui/core']
+    externals: ['@material-ui/core', 'react', 'react-dom']
   });
 };

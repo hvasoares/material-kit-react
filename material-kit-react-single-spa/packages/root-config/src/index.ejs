@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Root Config</title>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700" />
+
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -46,10 +51,13 @@
     {
       "imports": {
         "@some-org/root-config": "//localhost:9000/some-org-root-config.js",
+        "@some-org/dashboard-page": "//localhost:8084/some-org-dashboard-page.js",
+        "@some-org/components" : "//localhost:8083/some-org-components.js", 
         "@some-org/root-login-page": "//localhost:8082/some-org-login-page.js",
         "@some-org/icons": "//localhost:8081/some-org-icons.js",
         "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js"
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js",
+        "@material-ui/core": "https://cdn.jsdelivr.net/npm/@material-ui/core@5.0.0-alpha.28/umd/material-ui.production.min.js"
       }
     }
   </script>
@@ -71,7 +79,9 @@
   <% } %>
 </head>
 <body>
-  <main></main>
+  <div id="root" >
+    
+  </div>
   <script>
     System.import('@some-org/root-config');
   </script>

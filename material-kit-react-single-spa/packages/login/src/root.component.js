@@ -14,11 +14,10 @@ import {
 } from '@material-ui/core';
 import { FacebookIcon, GoogleIcon } from '@some-org/icons';
 
-import withBrowserRouter from './withBrowserRouter';
+import { withMainLayout } from '@some-org/components';
 
 const Login = () => {
   const navigate = useNavigate();
-
   return (
     <>
       <Helmet>
@@ -164,4 +163,4 @@ const Login = () => {
   );
 };
 
-export default withBrowserRouter(Login);
+export default withMainLayout(Login);
