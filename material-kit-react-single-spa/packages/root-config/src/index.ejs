@@ -45,12 +45,15 @@
 
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
-
+  
   <% if (isLocal) { %>
   <script type="systemjs-importmap">
     {
       "imports": {
         "@some-org/root-config": "//localhost:9000/some-org-root-config.js",
+        "@some-org/register-page": "//localhost:8090/some-org-register-page.js",
+        "@some-org/not-found-page": "//localhost:8089/some-org-not-found-page.js",
+        "@some-org/settings-page": "//localhost:8088/some-org-settings-page.js",
         "@some-org/product-list-page": "//localhost:8087/some-org-product-list-page.js",
         "@some-org/customer-list-page": "//localhost:8086/some-org-customer-list-page.js",
         "@some-org/account-page": "//localhost:8085/some-org-account-page.js",

@@ -4,6 +4,7 @@ import { experimentalStyled } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import DashboardNavbar from './DashboardNavbar';
 import DashboardSidebar from './DashboardSidebar';
+import Theme from './ThemeProvider';
 
 const DashboardLayoutRoot = experimentalStyled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
@@ -40,18 +41,20 @@ const DashboardLayout = ({ children }) => {
 
   return (
     <BrowserRouter>
-      <DashboardLayoutRoot>
-        <DashboardNavbar onMobileNavOpen={() => setMobileNavOpen(true)} />
-        <DashboardSidebar
-          onMobileClose={() => setMobileNavOpen(false)}
-          openMobile={isMobileNavOpen}
-        />
-        <DashboardLayoutWrapper>
-          <DashboardLayoutContainer>
-            <DashboardLayoutContent>{children}</DashboardLayoutContent>
-          </DashboardLayoutContainer>
-        </DashboardLayoutWrapper>
-      </DashboardLayoutRoot>
+      <Theme>
+        <DashboardLayoutRoot>
+          <DashboardNavbar onMobileNavOpen={() => setMobileNavOpen(true)} />
+          <DashboardSidebar
+            onMobileClose={() => setMobileNavOpen(false)}
+            openMobile={isMobileNavOpen}
+          />
+          <DashboardLayoutWrapper>
+            <DashboardLayoutContainer>
+              <DashboardLayoutContent>{children}</DashboardLayoutContent>
+            </DashboardLayoutContainer>
+          </DashboardLayoutWrapper>
+        </DashboardLayoutRoot>
+      </Theme>
     </BrowserRouter>
   );
 };
